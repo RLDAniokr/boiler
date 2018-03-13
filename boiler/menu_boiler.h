@@ -116,8 +116,8 @@ void inline create_menu()
 void static settings_changed(uint8_t el)
 {
 	//Переменная для хранения промежуточных значений с последющей записью в EEPROM
-	uint16_t val_16;
-	uint32_t val_32;
+	uint16_t val_16 = 0;
+	uint32_t val_32 = 0;
 	//cli();
 	switch (el)
 	{
@@ -213,7 +213,6 @@ void static settings_changed(uint8_t el)
 			eeprom_write_word(&temp_den[0], val_16);
 			temp_den_RAM[0] = val_16;
 		break;
-		
 		case 19:
 			//Корректировка требуемой температуры для ночного режима 1 контура
 			char_to_dec_16(temp_noch_s[0], 2, &val_16);
@@ -242,6 +241,7 @@ void static settings_changed(uint8_t el)
 			eeprom_write_dword(&K_D[0], val_32);
 			K_D_RAM[0] = val_32;
 		break;
+		
 		//=========Контур 2=============//
 		case 25:
 			//Корректировка требуемой температуры для дневного режима 2 контура
@@ -278,6 +278,7 @@ void static settings_changed(uint8_t el)
 			eeprom_write_dword(&K_D[1], val_32);
 			K_D_RAM[1] = val_32;
 		break;
+		
 		//=========Контур 3=============//
 		case 32:
 			//Корректировка требуемой температуры для дневного режима 3 контура
@@ -315,33 +316,44 @@ void static settings_changed(uint8_t el)
 			K_D_RAM[2] = val_32;
 		break;
 	}
-	//mems_to_RAM();
-	//sei();
 }
 
 void menu_in_loop()
 {
-	static uint8_t buf[8];																													//Буфер элемента меню
-	static uint8_t type = 0;																												//Тип элемента
-	static uint16_t element = 0;																											//Номер элемента
+	//Буфер элемента меню
+	static uint8_t buf[8];
+	//Тип элемента
+	static uint8_t type = 0;
+	//Номер элемента
+	static uint16_t element = 0;
 
-	while(Key(0)==1) {_delay_ms(10);}																					//"Антидребезг"
+	//"Антидребезг"
+	while(Key(0)==1) {_delay_ms(10);}
+	//Флаг входа в меню МС
 	flag_M = 1;
 					
 	while (1)
 	{
-		convert_to_show();																								//Конвертация чиловых данных из EEPROM в символьные для отображения
-		element = Goto_Menu(buf, &type);																				//Отображение текущего элемента
+		//Конвертация чиловых данных из EEPROM в символьные для отображения
+		convert_to_show();
+		//Отображение текущего элемента
+		element = Goto_Menu(buf, &type);
 		if (element!=NONE)
 		{
-			if (element == EXIT) break;																					//Выход в родительское меню
-			Save_Changes(element, buf);																					//Вызов функции сохранения символьной информации
-			settings_changed(element);																					//Вызов функции сохранения конвертации данных для записи в EEPROM
+			//Выход в родительское меню
+			if (element == EXIT) break;
+			//Вызов функции сохранения символьной информации
+			Save_Changes(element, buf);
+			//Вызов функции сохранения конвертации данных для записи в EEPROM
+			settings_changed(element);
 		}
 	}
+	// Флаг выхода из меню
 	flag_M = 0;
+	// Флаг отображения на экране
 	flag_O = 1;
-	flag_T = 0;																											//Обнуление флага отображения информации на главном экране
+	//Обнуление флага отображения информации на главном экране
+	flag_T = 0;
 
 }
 #endif

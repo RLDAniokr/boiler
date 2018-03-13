@@ -23,7 +23,8 @@ main.d main.o: .././main.c \
  .././Timer2.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  .././Menu.h .././Key.h .././COM.h .././RTC.h .././params.h \
- .././memory_ops.h .././menu_boiler.h .././rtc_boiler.h
+ .././memory_ops.h .././menu_boiler.h .././rtc_boiler.h .././snc_boiler.h \
+ .././pid_boiler.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -88,3 +89,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././menu_boiler.h:
 
 .././rtc_boiler.h:
+
+.././snc_boiler.h:
+
+.././pid_boiler.h:
