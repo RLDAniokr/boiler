@@ -225,6 +225,8 @@ Discarded input sections
                 0x00000000      0xc64 main.o
  .text.mems_to_RAM
                 0x00000000      0x148 main.o
+ .text.check_time
+                0x00000000      0x118 main.o
  .text.Timer0_Init
                 0x00000000       0x14 main.o
  .progmem.data.__c.2568
