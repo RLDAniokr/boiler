@@ -1,8 +1,8 @@
 /*
  * params.h
  *
- * Created: 01.12.2016 15:51:39
- *  Author: Antipin
+ * Created: 13.03.2018
+ * Author: Antipin
  */ 
 
 #ifndef PARAMS_H_
@@ -169,4 +169,6 @@ uint32_t K_D_RAM[3];
 
 //Флаг входа в меню МС
 uint8_t flag_M = 0;
+//Период открытия клапана
+uint8_t T_u[3] = {0, 0, 0};
 #endif /* PARAMS_H_ */
