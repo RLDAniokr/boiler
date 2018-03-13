@@ -1,16 +1,60 @@
 /*
- * boiler.c
- *
- * Created: 13.03.2018 8:58:12
- * Author : Antipin
- */ 
+	Прошивка котла: НИЛ АП
+	Дата создания: 13.03.2018
+	Автор: Антипин С.О. (НИОКР)
+*/ 
 
+// Частота микроконтроллера
+#define F_CPU 14745600UL
+
+// Параметры СОМ-порта
+#define COM_RX_BUFFER_SIZE 32
+#define COM_TX_BUFFER_SIZE 32
+#define COM1_PROTOCOL DCON
+
+// Параметры меню
+#define MAX_ELEMENTS_MENU 38
+#define MAX_SUB_MENUS 17
+#define MAX_HISTORY_ELEMENTS 16
+#define MAX_HISTORY_NAMES 16
+
+// Стандартная библиотека ввода/вывода
 #include <avr/io.h>
+// Стандартная библиотека символьных констант
+#include <stdio.h>
+// Стандартная библиотека для хранения данных во FLASH памяти
+#include <avr/pgmspace.h>																											
+// Стандартная библиотека для хранения данных в EEPROM памяти
+#include <avr/eeprom.h>																												
+// Стандартная библиотека для математических операций
+#include <math.h>																													
+// Стандартная библиотека для манипуляций с памятью
+#include <stdlib.h>
 
+
+// Библиотеки плат серии MC
+
+// #include "MC12D4R4O.h"
+// #include "MC12D6R.h"
+#include "MC8U6R.h"
+
+// Пользовательские библиотеки
+
+// Библиотека для работы с дисплеем
+#include "LED.h"
+// Библиотека для создания меню
+#include "Menu.h"
+// Библиотека для работы с кнопками
+#include "Key.h"
+// Библиотека для работы с СОМ-портами
+#include "COM.h"
+// Библиотека для работы с часами реального времени
+#include "RTC.h"
+// Числовые и символьные переменные
+#include "params.h"
 
 int main(void)
 {
-    /* Replace with your application code */
     while (1) 
     {
     }
