@@ -29,7 +29,7 @@
 #endif
 
 static char _CHK_mode[2]={0,0};																	//Признак включения/выключения контрольной суммы в протоколе DCON
-static char _Frame_pause[2];																	//Флаг превышения интервала 1.5 символа в Modbus RTU (1-интервал превышен/0-превышения не было)
+//static char _Frame_pause[2];																	//Флаг превышения интервала 1.5 символа в Modbus RTU (1-интервал превышен/0-превышения не было)
 
 static char _UART_RX_Buf[2][COM_RX_BUFFER_SIZE];												//Приемный буфер UART
 static int _UART_RX_point[2];																	//Текущая позиция в приемном буфере UART

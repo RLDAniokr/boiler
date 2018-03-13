@@ -1,9 +1,9 @@
 .vs
-boiler.elf
-boiler.lss
-boiler.map
-boiler.srec
-main.d
-main.o
+boiler/Debug/boiler.elf
+boiler/Debug/boiler.lss
+boiler/Debug/boiler.map
+boiler/Debug/boiler.srec
+boiler/Debug/main.d
+boiler/Debug/main.o
 makedep.mk
 Makefile
