@@ -126,7 +126,7 @@ void read_sencors(void)
 	{
 		//Вызов функции пересчета параметров регулятора
 		//uncomment
-		// calculate_PID();
+		calculate_PID();
 		
 		//Обнуление таймера считывания датчиков
 		time_10_dat=0;

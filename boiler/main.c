@@ -61,10 +61,10 @@
 #include "menu_boiler.h"
 // Работа с часами реального времени
 #include "rtc_boiler.h"
-// Работа с датчиками
-#include "snc_boiler.h"
 // Расчет работы регулятора
 #include "pid_boiler.h"
+// Работа с датчиками
+#include "snc_boiler.h"
 // Работа с тактовыми кнопками
 #include "buttons_boiler.h"
 // Работа с дисплеем
