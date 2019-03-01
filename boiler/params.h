@@ -8,6 +8,9 @@
 #ifndef PARAMS_H_
 #define PARAMS_H_
 
+//Пароль (начальное значение)
+uint8_t Password_s[4] = {'0', '0', '0', '0'}; 
+
 //DCON-команды на запуск сенсоров
 __flash const char init_Sensors[3][7] = {{"^P0002"}, {"^P0003"}, {"^P0004"}};
 //DCON-команды на считывание показаний сенсоров
@@ -75,7 +78,6 @@ int16_t E_prev[3] = {0, 0, 0};
 int32_t I_prev[3] = {0, 0, 0};
 	
 //===================Общие================================//
-
 //Текущее время
 uint8_t hour, min, sec;
 //Таймер для проверки достверности показаний часов реального времени
@@ -136,12 +138,6 @@ uint8_t time_kon_RAM [2];
 uint8_t time_kon_s[5];
 
 //====================Параметры контуров=======================//
-
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   Богатырев   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-uint8_t Password[4] = {'*', '*', '*', '*'};
-int TruePassword = 5738;
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 
 //Температура режима "День"
 uint16_t temp_den[3] EEMEM = {22, 20, 22};

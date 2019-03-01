@@ -13,8 +13,8 @@
 void inline create_menu()
 {
 	Add_New_Menu(0, 2);
-	Add_New_Element(0, PARAM_ELEMENT, NONE, PSTR("Пароль:"), Password, 4);
-	Add_New_Element(1, EMPTY_ELEMENT, 1, PSTR("Настройки"), NONE, NONE);
+	Add_New_Element(0, EMPTY_ELEMENT, 1, PSTR("Настройки"), NONE, NONE);
+	Add_New_Element(1, PARAM_ELEMENT, NONE, PSTR("Пароль:"), Password_s, 4);
 	
 	Add_New_Menu(1, 6);
 	
@@ -178,6 +178,7 @@ void static settings_changed(uint8_t el)
 			{
 				LED_SetPos(1, 0);
 				LED_Write_String_P(PSTR("ERROR"));
+				_delay_ms(1000);
 				break;
 			}
 			else
