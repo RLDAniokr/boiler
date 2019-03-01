@@ -137,6 +137,12 @@ uint8_t time_kon_s[5];
 
 //====================Параметры контуров=======================//
 
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   Богатырев   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+uint8_t Password[4] = {'*', '*', '*', '*'};
+int TruePassword = 5738;
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
 //Температура режима "День"
 uint16_t temp_den[3] EEMEM = {22, 20, 22};
 uint16_t temp_den_RAM[3];
