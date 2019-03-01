@@ -48,9 +48,9 @@
 
 // Библиотеки плат серии MC
 
-#include "MC12D4R4O.h"
+//#include "MC12D4R4O.h"
 // #include "MC12D6R.h"
-//#include "MC8U6R.h"
+#include "MC8U6R.h"
 
 // Пользовательские библиотеки
 
