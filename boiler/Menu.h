@@ -665,8 +665,18 @@ void Save_Changes(uint16_t element, uint8_t *ptr)
 uint16_t Goto_Menu (uint8_t *array_Byte, uint8_t *type)
 {
 	_my_Lib_Flags |= lib_Flag_Menu_Enable | lib_Flag_Set_Changes;																	//Установка флагов ("Меню активно" и "Изменения на индикаторе")
+	int h=2500;
 	while(1)
 	{
+		h--;
+		if (h==1)
+		{
+			_my_Lib_Flags &= ~lib_Flag_Menu_Enable;																			//Сброс флага "Меню активно"
+			_my_Lib_Flags |= lib_Flag_Menu_Out;																				//Установка флага "Выход из меню"
+			LED_Clear();
+			return EXIT;
+		}
+		_delay_ms(10);
 		static uint8_t element_Count = 0;																							//Порядковый номер элемента меню в текущем подменю
 		static uint8_t submenu_Count = 0;																							//Порядковый номер подменю
 		static uint8_t cursor_Pos = 255;																							//Позиция курсора
@@ -689,6 +699,7 @@ uint16_t Goto_Menu (uint8_t *array_Byte, uint8_t *type)
 		_Selected_Element_Calculate(element_Count, submenu_Count);																	//Расчет порядкового номера элемента меню
 		if (Key(0) == 1)																											//Если нажата кнопка 0
 		{
+			h=2500;
 			uint16_t time_Down = 0;																									//Счетчик времени нажатия
 			while(Key(0) == 1)
 			{
@@ -838,6 +849,7 @@ uint16_t Goto_Menu (uint8_t *array_Byte, uint8_t *type)
 //------------------------------------------------------ Обработка кнопки 3 --------------------------------------------------------//
 		if (Key(3) == 1)																											//Если нажата кнопка НАЗАД
 		{
+			h=2500;
 			while(Key(3) == 1)																										//Антидребезг
 			{
 				for (int i = 0; i < 20; i++)
@@ -909,6 +921,7 @@ uint16_t Goto_Menu (uint8_t *array_Byte, uint8_t *type)
 //--------------------------------------------------- Обработка кнопки 1 -----------------------------------------------------------//
 		if (Key(2) == 1)																											//Если нажата кнопка ВВЕРХ
 		{
+			h=2500;
 			while(Key(2) == 1)
 			{
 				for (int i = 0; i < 20; i++)
@@ -941,6 +954,7 @@ uint16_t Goto_Menu (uint8_t *array_Byte, uint8_t *type)
 //--------------------------------------------------- Обработка кнопки 2 -----------------------------------------------------------//
 		if (Key(1) == 1)																											//Если нажата кнопка ВНИЗ
 		{
+			h=2500;
 			while(Key(1) == 1)
 			{
 				for (int i = 0; i < 20; i++)
