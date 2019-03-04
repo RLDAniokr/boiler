@@ -716,7 +716,7 @@ uint16_t Goto_Menu (uint8_t *array_Byte, uint8_t *type)
 				if (_my_Lib_Flags & lib_Flag_Changing_Param)
 				{
 					//При попытки изменения параметров, проверка на правильность пароля (кроме самого пароля)
-					if ((element_Count == 1) || ((Password_s[0] == '5') && (Password_s[1] == '7') && (Password_s[2] == '3') && (Password_s[3] == '8')))     //Правильный пароль можно изменить только в этом месте
+					if (((submenu_Count == 0) && (element_Count == 1)) || ((Password_s[0] == '5') && (Password_s[1] == '7') && (Password_s[2] == '3') && (Password_s[3] == '8')))     //Правильный пароль можно изменить только в этом месте
 					{
 						if (time_Down < 300)
 						{

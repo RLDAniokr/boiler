@@ -86,8 +86,8 @@ void inline create_menu()
 	//====================3 контур=====================================//
 	
 	Add_New_Menu (14, 2);
-	Add_New_Element(32, EMPTY_ELEMENT, 14, PSTR("Измен. настроек/n температуры"), NONE, NONE);
-	Add_New_Element(33, EMPTY_ELEMENT, 15, PSTR("Измен. настроек/n регулятора"), NONE, NONE);
+	Add_New_Element(32, EMPTY_ELEMENT, 15, PSTR("Измен. настроек/n температуры"), NONE, NONE);
+	Add_New_Element(33, EMPTY_ELEMENT, 16, PSTR("Измен. настроек/n регулятора"), NONE, NONE);
 	
 	Add_New_Menu(15, 2);
 	Add_New_Element(34, PARAM_ELEMENT, NONE, PSTR("Температура день"), temp_den_s[2], 2);
